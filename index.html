@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kim zo'r? | 7-F viktorina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="konfetti"></canvas>
+
+  <!-- ============ 1. SOZLASH EKRANI ============ -->
+  <section id="sozlash" class="ekran faol">
+    <h1 class="logo">🧠 Kim zo'r?</h1>
+    <p class="tagline">7-F sinf viktorinasi · Guliston shahar 11-maktab</p>
+
+    <!-- O'quvchilar -->
+    <div class="panel">
+      <h2>1. Bugun darsga kelganlarni belgilang</h2>
+      <div class="kichik-tugmalar">
+        <button id="hammasiTugma" class="kichik">✅ Hammasi</button>
+        <button id="hechkimTugma" class="kichik">⬜ Hech kim</button>
+        <span id="kelganSoni" class="hisoblagich"></span>
+      </div>
+      <div id="oquvchilarRoyxat" class="oquvchilar"></div>
+    </div>
+
+    <!-- Fanlar -->
+    <div class="panel">
+      <h2>2. Qaysi fanlardan savol tushsin?</h2>
+      <div class="kichik-tugmalar">
+        <button id="fanHammasi" class="kichik">✅ Hamma fanlar</button>
+        <button id="fanHechbiri" class="kichik">⬜ Hech biri</button>
+        <span id="savollarJami" class="hisoblagich"></span>
+      </div>
+      <div id="fanlarRoyxat" class="fanlar"></div>
+    </div>
+
+    <!-- Jamoalar -->
+    <div class="panel">
+      <h2>3. Jamoalar va sozlamalar</h2>
+      <div class="sozlamalar">
+        <label>Jamoalar soni
+          <select id="jamoaSoni">
+            <option value="2" selected>2 ta jamoa</option>
+            <option value="3">3 ta jamoa</option>
+            <option value="4">4 ta jamoa</option>
+          </select>
+        </label>
+        <label>Savollar soni
+          <select id="savolSoni">
+            <option value="12">12 ta</option>
+            <option value="20" selected>20 ta</option>
+            <option value="30">30 ta</option>
+            <option value="all">Hammasi</option>
+          </select>
+        </label>
+        <label>Har bir savolga vaqt
+          <select id="vaqtTanlash">
+            <option value="20">20 soniya</option>
+            <option value="30" selected>30 soniya</option>
+            <option value="45">45 soniya</option>
+            <option value="60">60 soniya</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="jamoaNomlariDiv" class="sozlamalar"></div>
+
+      <button id="bolishTugma" class="tugma ikkinchi">🎲 Jamoalarga bo'lish</button>
+      <p id="jamoaMaslahat" class="jamoa-maslahat yashirin">👆 O'quvchi ismini bossangiz, u keyingi jamoaga o'tadi</p>
+      <div id="jamoalarKorinish" class="jamoalar-korinish"></div>
+    </div>
+
+    <button id="boshlashTugma" class="tugma katta" disabled>🚀 O'yinni boshlash</button>
+  </section>
+
+  <!-- ============ 2. O'YIN EKRANI ============ -->
+  <section id="oyin" class="ekran">
+    <div class="savol-raqam" id="savolRaqam">1 / 20</div>
+    <div id="hisob" class="hisob"></div>
+
+    <div class="panel savol-panel">
+      <div class="savol-tepa">
+        <div class="navbat" id="navbat"></div>
+        <div class="fan" id="fan"></div>
+      </div>
+
+      <div class="vaqt-qator">
+        <div class="vaqt"><div id="vaqtChiziq" class="vaqt-chiziq"></div></div>
+        <div id="vaqtSon" class="vaqt-son">30</div>
+      </div>
+
+      <h2 class="savol" id="savolMatn"></h2>
+      <div class="javoblar" id="javoblar"></div>
+
+      <div id="natijaXabar" class="natija-xabar"></div>
+
+      <div class="pastki">
+        <button id="yordamTugma" class="tugma yordam">✂️ 50/50 yordam</button>
+        <button id="keyingiTugma" class="tugma keyingi yashirin">Keyingi savol ➜</button>
+      </div>
+      <p class="maslahat">Klaviatura: 1–4 javob tanlash, Enter keyingi savol</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. YAKUN EKRANI ============ -->
+  <section id="yakun" class="ekran">
+    <div class="panel yakun-panel">
+      <div class="kubok">🏆</div>
+      <h1 id="golib" class="golib"></h1>
+      <div id="yakunHisob" class="yakun-hisob"></div>
+      <div id="yulduzlar" class="yulduzlar"></div>
+      <button id="qaytaTugma" class="tugma katta">🔄 Qayta o'ynash</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
